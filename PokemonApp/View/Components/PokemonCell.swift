@@ -8,10 +8,11 @@
 import SwiftUI
 import Kingfisher
 
+
 struct PokemonCell: View {
     let pokemon: Pokemon //Model -> PokedoxView
-    let viewModel: PokemonViewModel //funcbackgroundColor
-    
+    let viewModel: PokemonViewModel 
+
     var body: some View {
         ZStack {
             VStack (alignment: .leading){
@@ -24,12 +25,12 @@ struct PokemonCell: View {
                 
                 HStack {
                     Text(pokemon.type)
-                        .foregroundColor(.white)
+                        .foregroundColor(.orange)
                         .padding(.horizontal,16)
                         .padding(.vertical,8)
                         .overlay (
                             RoundedRectangle(cornerRadius: 16)
-                                .fill(.white.opacity(0.24))
+                                .fill(.orange.opacity(0.24))
                         )
                         .frame(width:100 , height:24)
                     
@@ -40,9 +41,9 @@ struct PokemonCell: View {
                         .padding([.bottom , .trailing], 4)
                 }
             }
-            .background(.gray)
+            .background(Color(red: 255/255, green: 235/255, blue: 173/255))
             .cornerRadius(16)
-            .shadow(color: .black, radius: 6, x:0.0, y:0.0)
+            .shadow(color: Color(red: 255/255, green: 235/255, blue: 173/255), radius: 6, x:0.0, y:0.0)
         }
     }
 }

@@ -20,7 +20,7 @@ class PokemonViewModel: ObservableObject {
     func fetchPokemon() {
         guard let url = URL(string: baseUrl) else { return }
         
-        URLSession.shared.dataTask(with: url) { (data, response, error) in
+        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
             //guard let data = data else { return }
             guard let data = data?.parseData(removeString: "null,") else { return } //formated
             guard let pokemon = try? JSONDecoder().decode([Pokemon].self, from: data) else { return }
@@ -30,7 +30,7 @@ class PokemonViewModel: ObservableObject {
                 self.pokemon = pokemon
             }
         }
-        .resume() //**
+        task.resume() //**
     }
 }
 

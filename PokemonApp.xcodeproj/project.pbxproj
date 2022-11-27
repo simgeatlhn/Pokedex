@@ -11,6 +11,9 @@
 		601BD4F129337FDF009121D3 /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601BD4F029337FDF009121D3 /* PokemonViewModel.swift */; };
 		601BD4F429338727009121D3 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 601BD4F329338727009121D3 /* Kingfisher */; };
 		601BD4F62933AE1C009121D3 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 601BD4F52933AE1C009121D3 /* DetailView.swift */; };
+		608E80822933C2E7009EBA10 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608E80812933C2E7009EBA10 /* LottieView.swift */; };
+		608E80872933C381009EBA10 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 608E80862933C381009EBA10 /* Lottie */; };
+		608E80892933C422009EBA10 /* pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = 608E80882933C422009EBA10 /* pokemon.json */; };
 		60D33F1629336DF8007791C6 /* PokemonAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33F1529336DF8007791C6 /* PokemonAppApp.swift */; };
 		60D33F1829336DF8007791C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33F1729336DF8007791C6 /* ContentView.swift */; };
 		60D33F1A29336DF9007791C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D33F1929336DF9007791C6 /* Assets.xcassets */; };
@@ -23,6 +26,8 @@
 		601BD4EE29337DF2009121D3 /* PokemonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonModel.swift; sourceTree = "<group>"; };
 		601BD4F029337FDF009121D3 /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		601BD4F52933AE1C009121D3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		608E80812933C2E7009EBA10 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
+		608E80882933C422009EBA10 /* pokemon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
 		60D33F1229336DF8007791C6 /* PokemonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D33F1529336DF8007791C6 /* PokemonAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAppApp.swift; sourceTree = "<group>"; };
 		60D33F1729336DF8007791C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -38,12 +43,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				601BD4F429338727009121D3 /* Kingfisher in Frameworks */,
+				608E80872933C381009EBA10 /* Lottie in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		608E80802933C2D5009EBA10 /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = SplashScreen;
+			sourceTree = "<group>";
+		};
 		60D33F0929336DF8007791C6 = {
 			isa = PBXGroup;
 			children = (
@@ -63,6 +76,8 @@
 		60D33F1429336DF8007791C6 /* PokemonApp */ = {
 			isa = PBXGroup;
 			children = (
+				608E80812933C2E7009EBA10 /* LottieView.swift */,
+				608E80802933C2D5009EBA10 /* SplashScreen */,
 				60F7BA2F29336EA200E9C03D /* Resources */,
 				60F7BA2E29336E9C00E9C03D /* Core */,
 				60F7BA2D29336E8900E9C03D /* Model */,
@@ -119,6 +134,7 @@
 		60F7BA2F29336EA200E9C03D /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				608E80882933C422009EBA10 /* pokemon.json */,
 				60D33F1929336DF9007791C6 /* Assets.xcassets */,
 			);
 			path = Resources;
@@ -150,6 +166,7 @@
 			name = PokemonApp;
 			packageProductDependencies = (
 				601BD4F329338727009121D3 /* Kingfisher */,
+				608E80862933C381009EBA10 /* Lottie */,
 			);
 			productName = PokemonApp;
 			productReference = 60D33F1229336DF8007791C6 /* PokemonApp.app */;
@@ -181,6 +198,7 @@
 			mainGroup = 60D33F0929336DF8007791C6;
 			packageReferences = (
 				601BD4F229338727009121D3 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				608E80852933C381009EBA10 /* XCRemoteSwiftPackageReference "lottie-ios" */,
 			);
 			productRefGroup = 60D33F1329336DF8007791C6 /* Products */;
 			projectDirPath = "";
@@ -196,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				608E80892933C422009EBA10 /* pokemon.json in Resources */,
 				60D33F1D29336DF9007791C6 /* Preview Assets.xcassets in Resources */,
 				60D33F1A29336DF9007791C6 /* Assets.xcassets in Resources */,
 			);
@@ -215,6 +234,7 @@
 				60F7BA3129336EEC00E9C03D /* PokemonCell.swift in Sources */,
 				601BD4EF29337DF2009121D3 /* PokemonModel.swift in Sources */,
 				60F7BA33293377EF00E9C03D /* PokedexView.swift in Sources */,
+				608E80822933C2E7009EBA10 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -425,6 +445,15 @@
 				kind = branch;
 			};
 		};
+		608E80852933C381009EBA10 /* XCRemoteSwiftPackageReference "lottie-ios" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/airbnb/lottie-ios";
+			requirement = {
+				kind = versionRange;
+				maximumVersion = 4.0.0;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -432,6 +461,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 601BD4F229338727009121D3 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
+		};
+		608E80862933C381009EBA10 /* Lottie */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 608E80852933C381009EBA10 /* XCRemoteSwiftPackageReference "lottie-ios" */;
+			productName = Lottie;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

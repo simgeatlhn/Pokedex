@@ -8,13 +8,45 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State var splashScreen  = true
+    
     var body: some View {
-        PokedexView()
+        ZStack{
+            Group{
+                if splashScreen {
+                    SplashScreen()
+                }
+                else{
+                    PokedexView()
+                }
+            }
+            .onAppear {
+                DispatchQueue
+                    .main
+                    .asyncAfter(deadline:
+                            .now() + 3) {
+                                self.splashScreen = false
+                            }
+            }
+        }
     }
 }
+
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
+    }
+}
+
+
+struct SplashScreen: View {
+    var body: some View {
+        ZStack{
+            Color.black.edgesIgnoringSafeArea(.all)
+            LottieView(filename: "pokemon")
+                .offset(x: -10, y: 0)
+        }
     }
 }

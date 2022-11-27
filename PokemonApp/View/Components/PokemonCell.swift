@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct PokemonCell: View {
+    //let pokemon: Pokemon //Model
+    
     var body: some View {
         ZStack {
             VStack (alignment: .leading){

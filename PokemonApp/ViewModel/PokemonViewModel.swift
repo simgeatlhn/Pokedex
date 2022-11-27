@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit //for UIColor
 
 class PokemonViewModel: ObservableObject {
     @Published var pokemon = [Pokemon]()

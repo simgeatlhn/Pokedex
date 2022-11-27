@@ -10,12 +10,14 @@ import SwiftUI
 struct PokedexView: View {
     private let gridItems = [GridItem(.flexible()), GridItem(.flexible())] //only two items in row
     
+    @ObservedObject var viewModel = PokemonViewModel()
+    
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 16) {
-                    ForEach(0..<100) { _ in
-                        PokemonCell()
+                    ForEach(viewModel.pokemon) { pokemon  in
+                        PokemonCell(pokemon: pokemon)
                     }
                 }
             }

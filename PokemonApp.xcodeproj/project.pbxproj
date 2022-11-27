@@ -53,6 +53,7 @@
 		608E80802933C2D5009EBA10 /* SplashScreen */ = {
 			isa = PBXGroup;
 			children = (
+				608E80812933C2E7009EBA10 /* LottieView.swift */,
 			);
 			path = SplashScreen;
 			sourceTree = "<group>";
@@ -76,7 +77,6 @@
 		60D33F1429336DF8007791C6 /* PokemonApp */ = {
 			isa = PBXGroup;
 			children = (
-				608E80812933C2E7009EBA10 /* LottieView.swift */,
 				608E80802933C2D5009EBA10 /* SplashScreen */,
 				60F7BA2F29336EA200E9C03D /* Resources */,
 				60F7BA2E29336E9C00E9C03D /* Core */,

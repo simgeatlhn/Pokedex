@@ -58,9 +58,3 @@ struct DetailView: View {
         .background(Color(red: 243/255, green: 239/255, blue: 224/255))
     }
 }
-
-struct DetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        DetailView(pokemon: MOCK_POKEMON[0] )
-    }
-}

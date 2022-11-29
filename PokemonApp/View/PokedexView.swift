@@ -24,8 +24,8 @@ struct PokedexView: View {
                     }
                 }
             }
-            .animation(.easeIn(duration: 0.3), value: viewModel.filteredPokemon.count)
             .navigationTitle("Pokemon")
+            .animation(.linear(duration: 0.3), value: viewModel.filteredPokemon.count)
             .searchable(text: $viewModel.searchText, prompt: "search")
         }
     }

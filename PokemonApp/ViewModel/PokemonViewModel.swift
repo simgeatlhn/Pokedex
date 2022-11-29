@@ -10,10 +10,17 @@ import UIKit //for UIColor
 
 class PokemonViewModel: ObservableObject {
     @Published var pokemon = [Pokemon]()
-    let baseUrl = "https://pokedex-bb36f.firebaseio.com/pokemon.json" //endpoint
+    @Published var searchText = ""
+    
+    let baseUrl = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
     
     init() {
         fetchPokemon()
+    }
+    
+    // Used with searchText to filter pokemon results
+    var filteredPokemon: [Pokemon] {
+        return searchText == "" ? pokemon : pokemon.filter { $0.name.contains(searchText.lowercased()) }
     }
     
     //fetch data

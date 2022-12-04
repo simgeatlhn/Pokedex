@@ -155,6 +155,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 60D33F2029336DF9007791C6 /* Build configuration list for PBXNativeTarget "PokemonApp" */;
 			buildPhases = (
+				60235B23293CBEBC00D2AE6B /* Run SwiftLint */,
 				60D33F0E29336DF8007791C6 /* Sources */,
 				60D33F0F29336DF8007791C6 /* Frameworks */,
 				60D33F1029336DF8007791C6 /* Resources */,
@@ -221,6 +222,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		60235B23293CBEBC00D2AE6B /* Run SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run SwiftLint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		60D33F0E29336DF8007791C6 /* Sources */ = {

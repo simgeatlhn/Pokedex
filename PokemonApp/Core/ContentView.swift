@@ -9,14 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     @State var splashScreen  = true
-    
     var body: some View {
-        ZStack{
-            Group{
+        ZStack {
+            Group {
                 if splashScreen {
                     SplashScreen()
                 }
-                else{
+                else {
                     PokedexView()
                 }
             }
@@ -32,18 +31,15 @@ struct ContentView: View {
     }
 }
 
-
-
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
     }
 }
 
-
 struct SplashScreen: View {
     var body: some View {
-        ZStack{
+        ZStack {
             Color(red: 243/255, green: 239/255, blue: 224/255).edgesIgnoringSafeArea(.all)
             LottieView(filename: "pokemon")
                 .offset(x: -10, y: 0)

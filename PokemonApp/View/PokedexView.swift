@@ -8,17 +8,15 @@
 import SwiftUI
 
 struct PokedexView: View {
-    private let gridItems = [GridItem(.flexible()), GridItem(.flexible())] //only two items in row
-    
+    private let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
     @State private var searchText = ""
     @ObservedObject var viewModel = PokemonViewModel()
-    
     var body: some View {
         NavigationView {
             ScrollView {
                 LazyVGrid(columns: gridItems, spacing: 16) {
                     ForEach(viewModel.filteredPokemon) { pokemon  in
-                        NavigationLink(destination:  DetailView(pokemon: pokemon, viewModel: viewModel), label: {
+                        NavigationLink(destination: DetailView(pokemon: pokemon, viewModel: viewModel), label: {
                             PokemonCell(pokemon: pokemon, viewModel: viewModel)
                         })
                     }
@@ -30,7 +28,6 @@ struct PokedexView: View {
         }
     }
 }
-
 
 struct PokedexView_Previews: PreviewProvider {
     static var previews: some View {

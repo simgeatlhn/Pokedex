@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ContentView: View {
     @State var splashScreen  = true
+    
     var body: some View {
         ZStack {
             Group {

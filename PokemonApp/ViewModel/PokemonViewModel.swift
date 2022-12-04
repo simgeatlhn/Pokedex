@@ -15,7 +15,11 @@ class PokemonViewModel: ObservableObject {
     let baseUrl = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
     
     init() {
-        fetchPokemon()
+        fetchPokemon { pokemon in
+            DispatchQueue.main.async {
+                self.pokemon = pokemon
+            }
+        }
     }
     
     // Used with searchText to filter pokemon results
@@ -24,7 +28,7 @@ class PokemonViewModel: ObservableObject {
     }
     
     //fetch data
-    func fetchPokemon() {
+    func fetchPokemon(completion: @escaping ([Pokemon]) -> Void) {
         guard let url = URL(string: baseUrl) else { return }
         
         let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
@@ -32,16 +36,12 @@ class PokemonViewModel: ObservableObject {
             guard let data = data?.parseData(removeString: "null,") else { return } //formated
             guard let pokemon = try? JSONDecoder().decode([Pokemon].self, from: data) else { return }
             
-            //reload data
-            DispatchQueue.main.async {
-                self.pokemon = pokemon
-            }
+            completion(pokemon)
         }
-        task.resume() //**
+        task.resume()
     }
 }
 
-//api dan gelen null, string kısmını silmek için kullanılan fonksiyon
 extension Data {
     func parseData(removeString  string: String) -> Data? {
         let dataAsString = String(data: self, encoding: .utf8)

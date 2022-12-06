@@ -19,6 +19,7 @@ struct TabBar: View {
                     Label("Favorites", systemImage: "heart")
                 }
         }
+        .accentColor(.orange)
     }
 }
 

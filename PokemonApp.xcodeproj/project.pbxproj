@@ -14,6 +14,9 @@
 		608E80822933C2E7009EBA10 /* LottieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 608E80812933C2E7009EBA10 /* LottieView.swift */; };
 		608E80872933C381009EBA10 /* Lottie in Frameworks */ = {isa = PBXBuildFile; productRef = 608E80862933C381009EBA10 /* Lottie */; };
 		608E80892933C422009EBA10 /* pokemon.json in Resources */ = {isa = PBXBuildFile; fileRef = 608E80882933C422009EBA10 /* pokemon.json */; };
+		60966909293F4BD8002C71AC /* TabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60966908293F4BD8002C71AC /* TabBar.swift */; };
+		6096690B293F4C33002C71AC /* FavoritesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096690A293F4C33002C71AC /* FavoritesView.swift */; };
+		6096690F293FA424002C71AC /* PokemonError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6096690E293FA424002C71AC /* PokemonError.swift */; };
 		60D33F1629336DF8007791C6 /* PokemonAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33F1529336DF8007791C6 /* PokemonAppApp.swift */; };
 		60D33F1829336DF8007791C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60D33F1729336DF8007791C6 /* ContentView.swift */; };
 		60D33F1A29336DF9007791C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60D33F1929336DF9007791C6 /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 		601BD4F52933AE1C009121D3 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
 		608E80812933C2E7009EBA10 /* LottieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieView.swift; sourceTree = "<group>"; };
 		608E80882933C422009EBA10 /* pokemon.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = pokemon.json; sourceTree = "<group>"; };
+		60966908293F4BD8002C71AC /* TabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBar.swift; sourceTree = "<group>"; };
+		6096690A293F4C33002C71AC /* FavoritesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoritesView.swift; sourceTree = "<group>"; };
+		6096690E293FA424002C71AC /* PokemonError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonError.swift; sourceTree = "<group>"; };
 		60D33F1229336DF8007791C6 /* PokemonApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PokemonApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60D33F1529336DF8007791C6 /* PokemonAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonAppApp.swift; sourceTree = "<group>"; };
 		60D33F1729336DF8007791C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -56,6 +62,14 @@
 				608E80812933C2E7009EBA10 /* LottieView.swift */,
 			);
 			path = SplashScreen;
+			sourceTree = "<group>";
+		};
+		60966907293F4BCD002C71AC /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				60966908293F4BD8002C71AC /* TabBar.swift */,
+			);
+			path = TabBar;
 			sourceTree = "<group>";
 		};
 		60D33F0929336DF8007791C6 = {
@@ -99,9 +113,11 @@
 		60F7BA2B29336E7E00E9C03D /* View */ = {
 			isa = PBXGroup;
 			children = (
+				60966907293F4BCD002C71AC /* TabBar */,
 				60F7BA34293377F800E9C03D /* Components */,
 				60F7BA32293377EF00E9C03D /* PokedexView.swift */,
 				601BD4F52933AE1C009121D3 /* DetailView.swift */,
+				6096690A293F4C33002C71AC /* FavoritesView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -110,6 +126,7 @@
 			isa = PBXGroup;
 			children = (
 				601BD4F029337FDF009121D3 /* PokemonViewModel.swift */,
+				6096690E293FA424002C71AC /* PokemonError.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -249,6 +266,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6096690B293F4C33002C71AC /* FavoritesView.swift in Sources */,
+				60966909293F4BD8002C71AC /* TabBar.swift in Sources */,
 				60D33F1829336DF8007791C6 /* ContentView.swift in Sources */,
 				60D33F1629336DF8007791C6 /* PokemonAppApp.swift in Sources */,
 				601BD4F129337FDF009121D3 /* PokemonViewModel.swift in Sources */,
@@ -256,6 +275,7 @@
 				60F7BA3129336EEC00E9C03D /* PokemonCell.swift in Sources */,
 				601BD4EF29337DF2009121D3 /* PokemonModel.swift in Sources */,
 				60F7BA33293377EF00E9C03D /* PokedexView.swift in Sources */,
+				6096690F293FA424002C71AC /* PokemonError.swift in Sources */,
 				608E80822933C2E7009EBA10 /* LottieView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ContentView: View {
     @State var splashScreen  = true
-    
     var body: some View {
         ZStack {
             Group {
@@ -17,7 +16,7 @@ struct ContentView: View {
                     SplashScreen()
                 }
                 else {
-                    PokedexView()
+                    TabBar()
                 }
             }
             .onAppear {

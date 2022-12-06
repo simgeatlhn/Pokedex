@@ -13,9 +13,14 @@ class PokemonViewModel: ObservableObject {
     @Published var searchText = ""
     let baseUrl = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
     init() {
-        fetchPokemon { pokemon in
-            DispatchQueue.main.async {
-                self.pokemon = pokemon
+        fetchPokemon { result in
+            switch result {
+            case .success(let pokemon):
+                DispatchQueue.main.async {
+                    self.pokemon = pokemon
+                }
+            case .failure(let error):
+                print(error.localizedDescription)
             }
         }
     }
@@ -23,12 +28,29 @@ class PokemonViewModel: ObservableObject {
     var filteredPokemon: [Pokemon] {
         return searchText == "" ? pokemon : pokemon.filter { $0.name.contains(searchText.lowercased()) }
     }
-    func fetchPokemon(completion: @escaping ([Pokemon]) -> Void) {
-        guard let url = URL(string: baseUrl) else { return }
-        let task = URLSession.shared.dataTask(with: url) { (data, response, error) in
-            guard let data = data?.parseData(removeString: "null,") else { return }
-            guard let pokemon = try? JSONDecoder().decode([Pokemon].self, from: data) else { return }
-            completion(pokemon)
+    func fetchPokemon(completion: @escaping (Result<[Pokemon], PokemonError>) -> Void) {
+        guard let requestURL = URL(string: baseUrl) else {
+            completion(.failure(.urlError))
+            return
+        }
+        let task = URLSession.shared.dataTask(with: requestURL) { data, response, error in
+            guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
+                completion(.failure(.responseError))
+                return
+            }
+            guard let data = data else {
+                completion(.failure(.dataError))
+                return
+            }
+            do {
+                guard let data = data.parseData(removeString: "null,") else { return }
+                guard let response = try? JSONDecoder().decode([Pokemon].self, from: data) else { return }
+                DispatchQueue.main.async {
+                    completion(.success(response))
+                }
+            } catch {
+                completion(.failure(.decodingError))
+            }
         }
         task.resume()
     }

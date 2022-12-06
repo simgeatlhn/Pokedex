@@ -11,7 +11,6 @@ import Kingfisher
 struct DetailView: View {
     var pokemon: Pokemon
     @ObservedObject var viewModel = PokemonViewModel()
-    
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {

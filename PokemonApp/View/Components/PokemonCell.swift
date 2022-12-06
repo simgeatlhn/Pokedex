@@ -11,7 +11,6 @@ import Kingfisher
 struct PokemonCell: View {
     let pokemon: Pokemon
     let viewModel: PokemonViewModel
-    
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {

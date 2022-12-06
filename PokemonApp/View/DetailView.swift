@@ -21,15 +21,24 @@ struct DetailView: View {
                     Text(pokemon.name.capitalized)
                         .font(.largeTitle)
                         .fontWeight(.semibold)
-                    Text(pokemon.type)
-                        .foregroundColor(.orange)
-                        .padding(.horizontal, 16)
-                        .padding(.vertical, 8)
-                        .overlay(
-                            RoundedRectangle(cornerRadius: 16)
-                                .fill(.orange.opacity(0.24))
-                        )
-                        .frame(width: 100, height: 24)
+                    HStack {
+                        Text(pokemon.type)
+                            .foregroundColor(.orange)
+                            .padding(.horizontal, 16)
+                            .padding(.vertical, 8)
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 16)
+                                    .fill(.orange.opacity(0.24))
+                            )
+                            .frame(width: 100, height: 24)
+                        Button(action: {
+                            //
+                        }, label: {
+                            Image(systemName: "heart")
+                                .foregroundColor(.orange)
+                                .fontWeight(.bold)
+                        })
+                    }
                     Divider()
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Description")
@@ -38,7 +47,6 @@ struct DetailView: View {
                             .fontWeight(.bold)
                         Text(pokemon.description)
                             .foregroundColor(.secondary)
-
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)

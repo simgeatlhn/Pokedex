@@ -11,6 +11,7 @@ import Kingfisher
 struct DetailView: View {
     var pokemon: Pokemon
     @ObservedObject var viewModel = PokemonViewModel()
+    
     var body: some View {
         ScrollView {
             VStack(alignment: .center) {
@@ -21,7 +22,6 @@ struct DetailView: View {
                     Text(pokemon.name.capitalized)
                         .font(.largeTitle)
                         .fontWeight(.semibold)
-                    HStack {
                         Text(pokemon.type)
                             .foregroundColor(.orange)
                             .padding(.horizontal, 16)
@@ -31,14 +31,6 @@ struct DetailView: View {
                                     .fill(.orange.opacity(0.24))
                             )
                             .frame(width: 100, height: 24)
-                        Button(action: {
-                            //
-                        }, label: {
-                            Image(systemName: "heart")
-                                .foregroundColor(.orange)
-                                .fontWeight(.bold)
-                        })
-                    }
                     Divider()
                     VStack(alignment: .leading, spacing: 8) {
                         Text("Description")
@@ -53,6 +45,6 @@ struct DetailView: View {
                 .padding()
             }
         }
-        .background(Color(red: 243/255, green: 239/255, blue: 224/255))
+        .background(backgroundColor)
     }
 }

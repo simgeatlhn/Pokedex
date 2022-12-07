@@ -12,6 +12,7 @@ class PokemonViewModel: ObservableObject {
     @Published var pokemon = [Pokemon]()
     @Published var searchText = ""
     let baseUrl = "https://pokedex-bb36f.firebaseio.com/pokemon.json"
+    
     init() {
         fetchPokemon { result in
             switch result {
@@ -24,10 +25,12 @@ class PokemonViewModel: ObservableObject {
             }
         }
     }
+    
     // Used with searchText to filter pokemon results
     var filteredPokemon: [Pokemon] {
         return searchText == "" ? pokemon : pokemon.filter { $0.name.contains(searchText.lowercased()) }
     }
+    
     func fetchPokemon(completion: @escaping (Result<[Pokemon], PokemonError>) -> Void) {
         guard let requestURL = URL(string: baseUrl) else {
             completion(.failure(.urlError))

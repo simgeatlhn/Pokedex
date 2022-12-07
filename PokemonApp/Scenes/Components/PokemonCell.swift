@@ -11,6 +11,7 @@ import Kingfisher
 struct PokemonCell: View {
     let pokemon: Pokemon
     let viewModel: PokemonViewModel
+    
     var body: some View {
         ZStack {
             VStack(alignment: .leading) {
@@ -37,7 +38,7 @@ struct PokemonCell: View {
                         .padding([.bottom, .trailing], 4)
                 }
             }
-            .background(Color(red: 255/255, green: 235/255, blue: 173/255))
+            .background(shadowColor)
             .cornerRadius(16)
             .shadow(color: Color(red: 255/255, green: 235/255, blue: 173/255), radius: 6, x: 0.0, y: 0.0)
         }

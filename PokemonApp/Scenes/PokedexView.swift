@@ -11,6 +11,7 @@ struct PokedexView: View {
     private let gridItems = [GridItem(.flexible()), GridItem(.flexible())]
     @State private var searchText = ""
     @ObservedObject var viewModel = PokemonViewModel()
+    
     var body: some View {
         NavigationView {
             ScrollView {

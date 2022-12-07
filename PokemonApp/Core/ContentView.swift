@@ -40,7 +40,7 @@ struct ContentView_Previews: PreviewProvider {
 struct SplashScreen: View {
     var body: some View {
         ZStack {
-            Color(red: 243/255, green: 239/255, blue: 224/255).edgesIgnoringSafeArea(.all)
+            backgroundColor.edgesIgnoringSafeArea(.all)
             LottieView(filename: "pokemon")
                 .offset(x: -10, y: 0)
         }

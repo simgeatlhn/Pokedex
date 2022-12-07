@@ -13,9 +13,9 @@
 - MVVM Architecture
 - Searchable
 - URLSession
-- <a href="https://github.com/realm/SwiftLint">SwiftLint data</a> 
+- <a href="https://github.com/realm/SwiftLint">SwiftLint</a> 
 - SPM
-- <a href="https://github.com/onevcat/Kingfisher">Kingfisher data</a> 
+- <a href="https://github.com/onevcat/Kingfisher">Kingfisher</a> 
 - Lottie Animation
 
 # Demo

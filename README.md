@@ -2,8 +2,7 @@
 
 - <a href="https://pokedex-bb36f.firebaseio.com/pokemon.json">Pokedex data</a> listed on the home screen.
 - The url session was used in the service layer.
-- Images were displayed with URLSession and KFImage.
-- The KFImage package was installed with SPM.
+- The Kingfisher package was installed with SPM.
 - Lottie animation was used on the splash screen.
 - Added error messages with enums. (decodingError, responseError, dataError, urlError)
 
